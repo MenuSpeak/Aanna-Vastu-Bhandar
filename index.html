@@ -43,19 +43,21 @@
         }
 
         .business-name {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 5px;
             overflow-wrap: break-word;
             word-break: break-word;
+            line-height: 1.3;
         }
 
         .business-tagline {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 10px;
             opacity: 0.9;
             overflow-wrap: break-word;
             word-break: break-word;
+            line-height: 1.4;
         }
 
         .contact-info {
@@ -80,37 +82,39 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
 
         /* Search and Filter */
         .search-filter {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border: 1px solid #e0d6c9;
         }
 
         .search-box {
             display: flex;
+            flex-direction: column;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .search-box input {
-            flex: 1;
-            padding: 12px 15px;
+            width: 100%;
+            padding: 14px 15px;
             border: 2px solid var(--brown);
             border-radius: 8px;
             font-size: 16px;
             font-family: 'Noto Sans Devanagari', sans-serif;
-            min-height: 48px;
+            min-height: 50px;
         }
 
         .search-box button {
-            padding: 12px 20px;
+            width: 100%;
+            padding: 14px;
             background: var(--maroon);
             color: white;
             border: none;
@@ -119,7 +123,7 @@
             font-weight: 600;
             font-size: 16px;
             transition: background 0.3s;
-            min-height: 48px;
+            min-height: 50px;
         }
 
         .search-box button:hover {
@@ -128,19 +132,23 @@
 
         .category-filter {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
         .category-btn {
-            padding: 8px 16px;
+            flex: 1;
+            min-width: calc(50% - 8px);
+            padding: 12px 10px;
             background: white;
             border: 2px solid var(--brown);
-            border-radius: 20px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s;
             min-height: 44px;
+            text-align: center;
+            font-size: 14px;
         }
 
         .category-btn.active,
@@ -153,8 +161,8 @@
         /* Menu Grid */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
             margin-bottom: 40px;
         }
 
@@ -165,6 +173,9 @@
             box-shadow: 0 4px 12px rgba(93, 64, 55, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #e0d6c9;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .menu-item:hover {
@@ -174,28 +185,33 @@
 
         .item-image {
             width: 100%;
-            height: 500px;
+            height: 350px;
             object-fit: cover;
             border-bottom: 3px solid var(--brown);
         }
 
         .item-info {
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .item-name {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--maroon);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             overflow-wrap: break-word;
             word-break: break-word;
+            line-height: 1.3;
         }
 
         .item-desc {
             color: #795548;
             margin-bottom: 10px;
             font-size: 14px;
+            flex-grow: 1;
         }
 
         .item-tags {
@@ -207,7 +223,7 @@
 
         .tag {
             background: #f0e6d9;
-            padding: 3px 8px;
+            padding: 4px 8px;
             border-radius: 4px;
             font-size: 12px;
             color: #795548;
@@ -217,11 +233,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 10px;
+            margin-top: auto;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .item-price {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--brown);
         }
@@ -231,7 +249,7 @@
             background: var(--maroon);
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 10px 15px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
@@ -239,8 +257,10 @@
             transition: all 0.3s;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             min-height: 44px;
+            width: 100%;
         }
 
         .inquiry-btn:hover {
@@ -265,7 +285,7 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            padding: 20px;
+            padding: 15px;
         }
 
         .inquiry-modal.active {
@@ -291,7 +311,7 @@
         }
 
         .inquiry-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             margin-bottom: 5px;
         }
@@ -302,11 +322,11 @@
         }
 
         .inquiry-body {
-            padding: 25px;
+            padding: 20px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
@@ -314,7 +334,7 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--maroon);
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .form-group input,
@@ -345,15 +365,16 @@
         }
 
         .inquiry-footer {
-            padding: 20px;
+            padding: 15px;
             background: #f9f5f0;
             border-top: 2px solid var(--brown);
             display: flex;
-            gap: 15px;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .inquiry-footer button {
-            flex: 1;
+            width: 100%;
             padding: 14px;
             border: none;
             border-radius: 8px;
@@ -393,20 +414,22 @@
             background: #25D366;
             color: white;
             border: none;
-            padding: 18px 25px;
+            padding: 18px 20px;
             border-radius: 10px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin-top: 20px;
             width: 100%;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            min-height: 60px;
+            min-height: 70px;
+            text-align: center;
         }
 
         .whatsapp-button-large:hover {
@@ -428,16 +451,17 @@
             margin-top: 10px;
             text-align: center;
             background: #f9f5f0;
-            padding: 8px;
+            padding: 10px;
             border-radius: 5px;
             border: 1px dashed #d4c4b5;
+            line-height: 1.5;
         }
 
         /* WhatsApp Float Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             background: #25D366;
             color: white;
             width: 60px;
@@ -463,9 +487,9 @@
         /* Services Section */
         .services-section {
             background: white;
-            padding: 30px;
+            padding: 25px 15px;
             border-radius: 10px;
-            margin: 30px 0;
+            margin: 25px 0;
             box-shadow: 0 4px 12px rgba(93, 64, 55, 0.1);
             border: 1px solid #e0d6c9;
         }
@@ -474,20 +498,20 @@
             text-align: center;
             color: var(--maroon);
             margin-bottom: 20px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .service-card {
             background: #f9f5f0;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             text-align: center;
             border: 2px solid #e0d6c9;
@@ -501,57 +525,58 @@
         }
 
         .service-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 35px;
+            margin-bottom: 10px;
             color: var(--maroon);
         }
 
         .service-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--brown);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .service-desc {
             color: #795548;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
         /* Contact Section */
         .contact-section {
             background: linear-gradient(135deg, var(--maroon), var(--brown));
             color: white;
-            padding: 40px;
+            padding: 30px 15px;
             border-radius: 10px;
-            margin: 30px 0;
+            margin: 25px 0;
             text-align: center;
         }
 
         .contact-title {
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 20px;
             font-weight: 700;
         }
 
         .contact-details {
             display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 25px;
         }
 
         .contact-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 15px;
-            font-size: 18px;
+            gap: 10px;
+            font-size: 16px;
+            text-align: center;
         }
 
         .contact-icon {
-            font-size: 30px;
+            font-size: 28px;
             color: #ffcc80;
         }
 
@@ -560,8 +585,8 @@
             background: var(--maroon);
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 20px 15px;
+            margin-top: 30px;
         }
 
         .highlight-line {
@@ -569,340 +594,204 @@
             padding: 15px;
             border-radius: 8px;
             margin: 15px 0;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             line-height: 1.5;
         }
 
         .services-list {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            flex-wrap: wrap;
             margin: 20px 0;
         }
 
         .service-badge {
             background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
+            padding: 10px 8px;
+            border-radius: 8px;
+            font-size: 13px;
             text-align: center;
-            flex: 1;
-            min-width: calc(33.33% - 10px);
-            box-sizing: border-box;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .header {
-                padding: 12px 15px;
+                padding: 20px;
             }
             
             .business-name {
+                font-size: 32px;
+            }
+            
+            .business-tagline {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .search-filter {
+                padding: 20px;
+            }
+            
+            .search-box {
+                flex-direction: row;
+                gap: 15px;
+            }
+            
+            .search-box input {
+                flex: 1;
+            }
+            
+            .search-box button {
+                width: auto;
+                min-width: 120px;
+            }
+            
+            .category-btn {
+                min-width: auto;
+                flex: none;
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            
+            .item-image {
+                height: 400px;
+            }
+            
+            .item-name {
+                font-size: 20px;
+            }
+            
+            .item-price {
+                font-size: 20px;
+            }
+            
+            .inquiry-btn {
+                width: auto;
+                padding: 10px 20px;
+            }
+            
+            .item-footer {
+                flex-wrap: nowrap;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .service-name {
+                font-size: 18px;
+            }
+            
+            .service-desc {
+                font-size: 14px;
+            }
+            
+            .whatsapp-button-large {
+                flex-direction: row;
+                font-size: 20px;
+                padding: 18px 25px;
+            }
+            
+            .contact-section {
+                padding: 40px 30px;
+            }
+            
+            .contact-details {
+                flex-direction: row;
+                justify-content: center;
+                gap: 40px;
+            }
+            
+            .contact-item {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+            
+            .inquiry-footer {
+                flex-direction: row;
+            }
+            
+            .inquiry-footer button {
+                width: auto;
+                flex: 1;
+            }
+            
+            .services-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .service-badge {
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .item-image {
+                height: 450px;
+            }
+            
+            .services-grid {
+                gap: 25px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 360px) {
+            .business-name {
                 font-size: 22px;
-                line-height: 1.3;
             }
             
             .business-tagline {
                 font-size: 14px;
-                line-height: 1.4;
-                margin-bottom: 8px;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-                font-size: 14px;
-            }
-            
-            .mobile-numbers {
-                font-size: 16px;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .search-box {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .search-box input {
-                width: 100%;
-                font-size: 16px;
-                padding: 14px;
-                min-height: 50px;
-            }
-            
-            .search-box button {
-                width: 100%;
-                padding: 14px;
-                min-height: 50px;
-            }
-            
-            .category-filter {
-                justify-content: center;
-                gap: 8px;
-            }
-            
-            .category-btn {
-                padding: 8px 12px;
-                font-size: 14px;
-                flex: 1;
-                min-width: calc(50% - 8px);
-                text-align: center;
-                min-height: 40px;
             }
             
             .menu-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 15px;
+                grid-template-columns: 1fr;
             }
             
             .item-image {
-                height: 180px;
+                height: 300px;
             }
             
-            .item-name {
-                font-size: 18px;
-            }
-            
-            .item-price {
-                font-size: 18px;
-            }
-            
-            .inquiry-content {
-                max-width: 95%;
-                max-height: 90vh;
-                overflow-y: auto;
-            }
-            
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 24px;
+            .category-btn {
+                min-width: 100%;
             }
             
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .service-card {
-                padding: 15px;
-            }
-            
-            .service-name {
-                font-size: 16px;
+                grid-template-columns: 1fr;
             }
             
             .whatsapp-button-large {
+                font-size: 16px;
                 padding: 16px;
-                font-size: 18px;
-                flex-direction: column;
-                gap: 10px;
-                min-height: 70px;
-            }
-            
-            .contact-section {
-                padding: 25px 20px;
             }
             
             .contact-title {
-                font-size: 24px;
+                font-size: 22px;
             }
             
-            .contact-item {
-                font-size: 16px;
-                flex-direction: column;
-                text-align: center;
-                gap: 8px;
-            }
-            
-            .highlight-line {
-                font-size: 16px;
-                padding: 12px;
-                margin: 15px 0;
-            }
-            
-            .footer {
-                padding: 15px;
-            }
-            
-            .footer p {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 8px;
-            }
-            
-            .service-badge {
-                font-size: 12px;
-                padding: 6px 10px;
-                min-width: calc(50% - 10px);
-            }
-            
-            .inquiry-modal {
-                padding: 10px;
-                align-items: flex-start;
-                padding-top: 20px;
-            }
-            
-            .inquiry-title {
-                font-size: 20px;
-            }
-            
-            .inquiry-body {
-                padding: 20px 15px;
-            }
-            
-            .form-group label {
-                font-size: 15px;
-            }
-            
-            .form-group input,
-            .form-group textarea {
-                padding: 12px;
-                font-size: 16px;
-            }
-            
-            .price-note {
-                font-size: 13px;
-                padding: 10px;
-            }
-            
-            .whatsapp-button-large svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .business-name {
-                font-size: 20px;
-            }
-            
-            .category-btn {
-                min-width: 100%;
-                font-size: 13px;
-                padding: 10px;
-            }
-            
-            .menu-grid {
+            .services-list {
                 grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            
-            .item-image {
-                height: 160px;
-            }
-            
-            .item-footer {
-                flex-direction: column;
-                gap: 12px;
-                align-items: flex-start;
-            }
-            
-            .inquiry-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .inquiry-modal {
-                padding: 0;
-            }
-            
-            .inquiry-content {
-                max-width: 100%;
-                max-height: 100vh;
-                border-radius: 0;
-                margin: 0;
-            }
-            
-            .inquiry-header {
-                padding: 15px;
-            }
-            
-            .inquiry-title {
-                font-size: 18px;
-            }
-            
-            .inquiry-subtitle {
-                font-size: 12px;
-            }
-            
-            .inquiry-body {
-                padding: 15px;
-            }
-            
-            .inquiry-footer {
-                padding: 15px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .inquiry-footer button {
-                width: 100%;
-            }
-            
-            .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                bottom: 15px;
-                right: 15px;
-                font-size: 20px;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .whatsapp-button-large {
-                font-size: 16px;
-                padding: 14px;
-                min-height: 60px;
-            }
-            
-            .contact-section {
-                padding: 20px 15px;
-            }
-            
-            .contact-title {
-                font-size: 20px;
-            }
-            
-            .highlight-line {
-                font-size: 14px;
-                line-height: 1.5;
-            }
-            
-            .footer p {
-                font-size: 13px;
-            }
-            
-            .service-badge {
-                min-width: 100%;
-                font-size: 13px;
-                padding: 8px;
-            }
-            
-            .section-title {
-                font-size: 24px;
-            }
-            
-            .search-filter {
-                padding: 15px;
-            }
-            
-            .price-note {
-                font-size: 12px;
-                padding: 8px;
             }
         }
 
@@ -938,6 +827,29 @@
         button {
             user-select: none;
             -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        /* Improve touch targets for mobile */
+        input, button, textarea {
+            min-height: 44px;
+        }
+
+        /* Smooth scrolling for mobile */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Image fallback styling */
+        .item-image:not([src]), .item-image[src=""] {
+            background: linear-gradient(135deg, #f5f1e8 0%, #e0d6c9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b4513;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -978,7 +890,8 @@
 
         <!-- Price Note -->
         <div class="price-note">
-            <strong>📞 किंमतीसाठी कॉल करा:</strong> 9850026102 / 9423727455
+            <strong>📞 किंमतीसाठी कॉल करा:</strong> 9850026102 / 9423727455<br>
+            📍 चोपडी, ता-सांगोला, जि-सोलापूर
         </div>
 
         <!-- Services Section -->
@@ -1159,7 +1072,6 @@
             {"id":49,"cat":"utensils","name":"चहा कप","price":"₹--","desc":"कप","tags":["भांडी"],"img":"img/tea_cup.jpeg"},
             {"id":50,"cat":"other","name":"कुलर","price":"₹--","desc":"कुलर","tags":["इतर"],"img":"img/Color.jpeg"},
             {"id":51,"cat":"other","name":"चेअर कवर","price":"₹--","desc":"चेअर कवर","tags":["इतर"],"img":"img/चेअर कवर1.jpg"},
-            // {"id":52,"cat":"other","name":"ग्रिंडर","price":"₹--","desc":"ग्रिंडर","tags":["इतर"],"img":"img/ग्रिंडर.jpeg"},
             {"id":53,"cat":"other","name":"राउंड चेअर","price":"₹--","desc":"राउंड चेअर","tags":["इतर"],"img":"img/राउंड चेअर.jpeg"},
             {"id":54,"cat":"other","name":"चपाती मशीन","price":"₹--","desc":"चपाती मशीन","tags":["इतर"],"img":"img/चपाती मशीन.jpeg"},
             {"id":55,"cat":"other","name":"समई ","price":"₹--","desc":"समई","tags":["इतर"],"img":"img/समई1.jpeg"},
@@ -1180,19 +1092,23 @@
             });
             
             // Add input event for real-time search on mobile
-            if ('ontouchstart' in window) {
-                let searchTimeout;
-                searchInput.addEventListener('input', function() {
-                    clearTimeout(searchTimeout);
-                    searchTimeout = setTimeout(searchItems, 500);
-                });
-            }
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(searchItems, 500);
+            });
             
             // Load saved form data
             loadFormData();
             
             // Add touch support for modal close
             setupMobileTouchEvents();
+            
+            // Prevent zoom on mobile
+            setupMobileZoomPrevention();
+            
+            // Handle keyboard on mobile
+            setupMobileKeyboard();
         }
 
         // Setup mobile touch events
@@ -1205,15 +1121,38 @@
                 }
             }, { passive: true });
             
-            // Handle mobile keyboard better
-            document.querySelectorAll('input, textarea').forEach(element => {
-                element.addEventListener('focus', function() {
-                    if (window.innerWidth <= 768) {
-                        setTimeout(() => {
-                            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }, 300);
-                    }
+            // Improve touch feedback
+            document.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.style.opacity = '0.8';
                 });
+                btn.addEventListener('touchend', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        }
+
+        // Prevent zoom on mobile
+        function setupMobileZoomPrevention() {
+            document.addEventListener('touchmove', function(e) {
+                if (e.scale !== 1) e.preventDefault();
+            }, { passive: false });
+        }
+
+        // Handle mobile keyboard
+        function setupMobileKeyboard() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                });
+                
+                // Add done button for mobile keyboard
+                if (input.tagName === 'INPUT' && input.type !== 'button' && input.type !== 'submit') {
+                    input.setAttribute('enterkeyhint', 'done');
+                }
             });
         }
 
@@ -1229,7 +1168,8 @@
             menuGrid.innerHTML = items.map(item => `
                 <div class="menu-item">
                     <img src="${item.img}" alt="${item.name}" class="item-image" 
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNNzUgMTAwSDEyNU0xMDAgNzVWMTI1TTUwIDExMEgyNTBNMjEwIDU1VjE2NU01MCA1NVYxNjVNMTMwIDg1SDIwME0xMzAgMTA1SDIwME0xMzAgMTI1SDIwME01MCA4NUg4ME01MCAxMDVIODBNNTAgMTI1SDgwTTIyNSA4NUgyNjBNMjI1IDEwNUgyNjBNMjI1IDEyNUgyNjBNNTAgMTY1SDgwTTIyNSAxNjVIMjYwIiBzdHJva2U9IiNFOEU4RTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+'">
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRkYiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOGI0NTEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbWFnZSBub3QgYXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg=='"
+                         loading="lazy">
                     <div class="item-info">
                         <h3 class="item-name">${item.name}</h3>
                         <p class="item-desc">${item.desc}</p>
@@ -1254,6 +1194,16 @@
             menuItems.forEach((item, index) => {
                 item.style.animationDelay = `${index * 0.05}s`;
                 item.classList.add('fade-in');
+            });
+            
+            // Add touch event to whole card for better mobile experience
+            menuItems.forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                item.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
             });
         }
 
@@ -1280,6 +1230,11 @@
             });
             document.querySelector('.category-btn[onclick*="all"]').classList.add('active');
             currentFilter = 'all';
+            
+            // Scroll to results
+            setTimeout(() => {
+                document.querySelector('.menu-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
         }
 
         // Filter by category
@@ -1301,6 +1256,11 @@
                 const filteredItems = menuData.filter(item => item.cat === category);
                 renderMenuItems(filteredItems);
             }
+            
+            // Scroll to results
+            setTimeout(() => {
+                document.querySelector('.menu-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
         }
 
         // Open inquiry form
@@ -1312,12 +1272,23 @@
             setTimeout(() => {
                 document.getElementById('inquiryName').focus();
             }, 300);
+            
+            // Prevent body scrolling on mobile
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
         }
 
         // Close inquiry form
         function closeInquiryForm() {
             document.getElementById('inquiryModal').classList.remove('active');
             document.body.style.overflow = '';
+            
+            // Restore body scrolling
+            document.body.style.position = '';
+            document.body.style.width = '';
+            
+            // Hide keyboard on mobile
+            document.activeElement.blur();
         }
 
         // Save form data
@@ -1460,6 +1431,18 @@
                 img.style.opacity = '1';
             });
         });
+        
+        // Handle orientation change on mobile
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }, 100);
+        });
+        
+        // Improve mobile performance
+        window.addEventListener('touchstart', function() {}, { passive: true });
+        window.addEventListener('touchmove', function() {}, { passive: true });
     </script>
 </body>
 </html>
