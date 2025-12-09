@@ -25,6 +25,12 @@
             background-color: var(--cream);
             color: #5d4037;
             line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Header Styles */
@@ -40,12 +46,16 @@
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 5px;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         .business-tagline {
             font-size: 18px;
             margin-bottom: 10px;
             opacity: 0.9;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         .contact-info {
@@ -96,6 +106,7 @@
             border-radius: 8px;
             font-size: 16px;
             font-family: 'Noto Sans Devanagari', sans-serif;
+            min-height: 48px;
         }
 
         .search-box button {
@@ -108,6 +119,7 @@
             font-weight: 600;
             font-size: 16px;
             transition: background 0.3s;
+            min-height: 48px;
         }
 
         .search-box button:hover {
@@ -128,6 +140,7 @@
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s;
+            min-height: 44px;
         }
 
         .category-btn.active,
@@ -175,6 +188,8 @@
             font-weight: 600;
             color: var(--maroon);
             margin-bottom: 5px;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         .item-desc {
@@ -225,6 +240,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            min-height: 44px;
         }
 
         .inquiry-btn:hover {
@@ -263,6 +279,8 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .inquiry-header {
@@ -347,6 +365,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            min-height: 50px;
         }
 
         .cancel-btn {
@@ -387,6 +406,7 @@
             width: 100%;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            min-height: 60px;
         }
 
         .whatsapp-button-large:hover {
@@ -432,6 +452,7 @@
             border: none;
             font-size: 30px;
             transition: all 0.3s;
+            text-decoration: none;
         }
 
         .whatsapp-float:hover {
@@ -550,12 +571,13 @@
             margin: 15px 0;
             font-size: 18px;
             font-weight: 600;
+            line-height: 1.5;
         }
 
         .services-list {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             flex-wrap: wrap;
             margin: 20px 0;
         }
@@ -565,51 +587,195 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
+            text-align: center;
+            flex: 1;
+            min-width: calc(33.33% - 10px);
+            box-sizing: border-box;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .header {
+                padding: 12px 15px;
+            }
+            
             .business-name {
-                font-size: 24px;
+                font-size: 22px;
+                line-height: 1.3;
             }
             
             .business-tagline {
-                font-size: 16px;
+                font-size: 14px;
+                line-height: 1.4;
+                margin-bottom: 8px;
             }
             
             .contact-info {
                 flex-direction: column;
                 gap: 10px;
+                font-size: 14px;
+            }
+            
+            .mobile-numbers {
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-box input {
+                width: 100%;
+                font-size: 16px;
+                padding: 14px;
+                min-height: 50px;
+            }
+            
+            .search-box button {
+                width: 100%;
+                padding: 14px;
+                min-height: 50px;
+            }
+            
+            .category-filter {
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .category-btn {
+                padding: 8px 12px;
+                font-size: 14px;
+                flex: 1;
+                min-width: calc(50% - 8px);
+                text-align: center;
+                min-height: 40px;
             }
             
             .menu-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 15px;
+            }
+            
+            .item-image {
+                height: 180px;
+            }
+            
+            .item-name {
+                font-size: 18px;
+            }
+            
+            .item-price {
+                font-size: 18px;
             }
             
             .inquiry-content {
                 max-width: 95%;
+                max-height: 90vh;
+                overflow-y: auto;
             }
             
             .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
                 width: 50px;
                 height: 50px;
+                bottom: 20px;
+                right: 20px;
                 font-size: 24px;
             }
             
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
             
-            .contact-details {
-                flex-direction: column;
-                gap: 20px;
+            .service-card {
+                padding: 15px;
+            }
+            
+            .service-name {
+                font-size: 16px;
             }
             
             .whatsapp-button-large {
-                padding: 15px;
+                padding: 16px;
                 font-size: 18px;
+                flex-direction: column;
+                gap: 10px;
+                min-height: 70px;
+            }
+            
+            .contact-section {
+                padding: 25px 20px;
+            }
+            
+            .contact-title {
+                font-size: 24px;
+            }
+            
+            .contact-item {
+                font-size: 16px;
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .highlight-line {
+                font-size: 16px;
+                padding: 12px;
+                margin: 15px 0;
+            }
+            
+            .footer {
+                padding: 15px;
+            }
+            
+            .footer p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 8px;
+            }
+            
+            .service-badge {
+                font-size: 12px;
+                padding: 6px 10px;
+                min-width: calc(50% - 10px);
+            }
+            
+            .inquiry-modal {
+                padding: 10px;
+                align-items: flex-start;
+                padding-top: 20px;
+            }
+            
+            .inquiry-title {
+                font-size: 20px;
+            }
+            
+            .inquiry-body {
+                padding: 20px 15px;
+            }
+            
+            .form-group label {
+                font-size: 15px;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            .price-note {
+                font-size: 13px;
+                padding: 10px;
+            }
+            
+            .whatsapp-button-large svg {
+                width: 24px;
+                height: 24px;
             }
         }
 
@@ -618,20 +784,57 @@
                 padding: 10px;
             }
             
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .business-name {
                 font-size: 20px;
             }
             
-            .inquiry-modal {
+            .category-btn {
+                min-width: 100%;
+                font-size: 13px;
                 padding: 10px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .item-image {
+                height: 160px;
+            }
+            
+            .item-footer {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+            
+            .inquiry-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .inquiry-modal {
+                padding: 0;
             }
             
             .inquiry-content {
                 max-width: 100%;
+                max-height: 100vh;
+                border-radius: 0;
+                margin: 0;
+            }
+            
+            .inquiry-header {
+                padding: 15px;
+            }
+            
+            .inquiry-title {
+                font-size: 18px;
+            }
+            
+            .inquiry-subtitle {
+                font-size: 12px;
             }
             
             .inquiry-body {
@@ -639,11 +842,67 @@
             }
             
             .inquiry-footer {
+                padding: 15px;
                 flex-direction: column;
+                gap: 10px;
             }
             
             .inquiry-footer button {
-                padding: 12px;
+                width: 100%;
+            }
+            
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-button-large {
+                font-size: 16px;
+                padding: 14px;
+                min-height: 60px;
+            }
+            
+            .contact-section {
+                padding: 20px 15px;
+            }
+            
+            .contact-title {
+                font-size: 20px;
+            }
+            
+            .highlight-line {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            .footer p {
+                font-size: 13px;
+            }
+            
+            .service-badge {
+                min-width: 100%;
+                font-size: 13px;
+                padding: 8px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .search-filter {
+                padding: 15px;
+            }
+            
+            .price-note {
+                font-size: 12px;
+                padding: 8px;
             }
         }
 
@@ -656,15 +915,42 @@
         .fade-in {
             animation: fadeIn 0.5s ease;
         }
+
+        /* Touch improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .menu-item:hover {
+                transform: none;
+            }
+            
+            .category-btn:hover,
+            .inquiry-btn:hover,
+            .whatsapp-button-large:hover,
+            .whatsapp-float:hover {
+                transform: none;
+            }
+            
+            .service-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Prevent text selection on buttons */
+        button {
+            user-select: none;
+            -webkit-user-select: none;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <h1 class="business-name">आण्णा वस्तू भांडार मंगल केंद्र & केटरिंग.</h1>
-        <div class="business-tagline">भांडी, टेबल, चेअर व डेकोरेशन साहित्य भाड्याने मिळेल. </div>
+        <div class="business-tagline">भांडी, टेबल, चेअर व डेकोरेशन साहित्य भाड्याने मिळेल.</div>
         <div class="contact-info">
-            <div class="mobile-numbers">मोबाईल: 9850026102 / 9423727455   </div>
+            <div class="mobile-numbers">
+                <div>मोबाईल: 9850026102</div>
+                <div>मोबाईल: 9423727455</div>
+            </div>
         </div>
     </header>
 
@@ -673,15 +959,15 @@
         <!-- Search and Filter -->
         <div class="search-filter">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="उपकरण शोधा...">
+                <input type="text" id="searchInput" placeholder="उपकरण शोधा..." autocomplete="off">
                 <button onclick="searchItems()">शोधा</button>
             </div>
             <div class="category-filter" id="categoryFilter">
-                <button class="category-btn active" onclick="filterCategory('all')">सर्व</button>
-                <button class="category-btn" onclick="filterCategory('furniture')">टेबल / खुर्च्या</button>
-                <button class="category-btn" onclick="filterCategory('utensils')">भांडी</button>
-                <button class="category-btn" onclick="filterCategory('decoration')">सजावट</button>
-                <button class="category-btn" onclick="filterCategory('other')">इतर</button>
+                <button class="category-btn active" onclick="filterCategory('all')" aria-label="सर्व उपकरणे">सर्व</button>
+                <button class="category-btn" onclick="filterCategory('furniture')" aria-label="टेबल आणि खुर्च्या">टेबल / खुर्च्या</button>
+                <button class="category-btn" onclick="filterCategory('utensils')" aria-label="भांडी">भांडी</button>
+                <button class="category-btn" onclick="filterCategory('decoration')" aria-label="सजावट सामान">सजावट</button>
+                <button class="category-btn" onclick="filterCategory('other')" aria-label="इतर सामान">इतर</button>
             </div>
         </div>
 
@@ -722,7 +1008,7 @@
             </div>
             
             <!-- Big WhatsApp Button -->
-            <button class="whatsapp-button-large" onclick="openInquiryForm()">
+            <button class="whatsapp-button-large" onclick="openInquiryForm()" aria-label="WhatsApp वर Inquiry पाठवा">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.864 3.488"/>
                 </svg>
@@ -739,14 +1025,14 @@
                     <div>
                         <div style="font-weight: bold;">मोबाईल नंबर</div>
                         <div>9850026102</div>
-                        <div>   </div>
+                        <div>9423727455</div>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
                     <div>
                         <div style="font-weight: bold;">पत्ता</div>
-                        <div> </div>
+                        <div>चोपडी, ता-सांगोला, जि-सोलापूर</div>
                     </div>
                 </div>
             </div>
@@ -767,7 +1053,7 @@
     </div>
 
     <!-- WhatsApp Float Button -->
-    <button class="whatsapp-float" onclick="openInquiryForm()">
+    <button class="whatsapp-float" onclick="openInquiryForm()" aria-label="WhatsApp संपर्क">
         💬
     </button>
 
@@ -781,15 +1067,15 @@
             <div class="inquiry-body">
                 <div class="form-group">
                     <label for="inquiryName">नाव <span class="required">*</span></label>
-                    <input type="text" id="inquiryName" placeholder="तुमचे पूर्ण नाव">
+                    <input type="text" id="inquiryName" placeholder="तुमचे पूर्ण नाव" autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="inquiryMobile">मोबाईल नंबर <span class="required">*</span></label>
-                    <input type="tel" id="inquiryMobile" placeholder="9850026102" maxlength="10">
+                    <input type="tel" id="inquiryMobile" placeholder="9850026102" maxlength="10" inputmode="numeric" autocomplete="tel">
                 </div>
                 <div class="form-group">
                     <label for="inquiryAddress">पत्ता</label>
-                    <textarea id="inquiryAddress" placeholder="तुमचा पूर्ण पत्ता"></textarea>
+                    <textarea id="inquiryAddress" placeholder="तुमचा पूर्ण पत्ता" autocomplete="street-address"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="inquiryMessage">संदेश (Optional)</label>
@@ -811,7 +1097,7 @@
     <!-- Footer -->
     <footer class="footer">
         <p>© 2025 आण्णा वस्तू भांडार मंगल केंद्र & केटरिंग . सर्व हक्क राखीव.</p>
-        <p>📞 कॉल करा: 9850026102 / 9423727455    | 📍-Chopadi, Tal-(sangola), Dist-Solapur.</p>
+        <p>📞 कॉल करा: 9850026102 / 9423727455 | 📍 चोपडी, ता-सांगोला, जि-सोलापूर</p>
     </footer>
 
     <script>
@@ -819,8 +1105,8 @@
         const menuData = [
             {"id":1,"cat":"furniture","name":"टेबल","price":"₹--","desc":"टेबल","tags":["टेबल"],"img":"img/table.jpg"},
             {"id":2,"cat":"furniture","name":"खुर्ची","price":"₹--","desc":"खुर्ची","tags":["खुर्ची"],"img":"img/chair.jpg"},
-                    {"id":582,"cat":"furniture","name":"VIP खुर्ची","price":"₹--","desc":"खुर्ची","tags":["खुर्ची"],"img":"img/Vip chair.jpeg"},
-                    {"id":582,"cat":"furniture","name":"नवरदेव नवरी खुर्ची","price":"₹--","desc":"नवरदेव नवरी खुर्ची","tags":["खुर्ची"],"img":"img/नवरदेव नवरी1.jpeg"},
+            {"id":582,"cat":"furniture","name":"VIP खुर्ची","price":"₹--","desc":"खुर्ची","tags":["खुर्ची"],"img":"img/Vip chair.jpeg"},
+            {"id":582,"cat":"furniture","name":"नवरदेव नवरी खुर्ची","price":"₹--","desc":"नवरदेव नवरी खुर्ची","tags":["खुर्ची"],"img":"img/नवरदेव नवरी1.jpeg"},
             {"id":3,"cat":"furniture","name":"Mandap vidhi chairs","price":"₹--","desc":"Mandap vidhi chairs","tags":["खुर्ची"],"img":"img/Mandap vidhi chairs.jpg"},        
             {"id":4,"cat":"utensils","name":"पातेले (लहान-मोठे)","price":"₹--","desc":"पातेले","tags":["भांडी"],"img":"img/patele.jpeg"},
             {"id":5,"cat":"utensils","name":"बादली (स्टील)","price":"₹--","desc":"स्टील बादली","tags":["भांडी"],"img":"img/bucket_steel.jpeg"},
@@ -860,8 +1146,6 @@
             {"id":39,"cat":"decoration","name":"बारसे पाळणा","price":"₹--","desc":"बारसे पाळणा","tags":["इतर"],"img":"img/बारसे पाळणा1.jpeg"}, 
             {"id":390,"cat":"decoration","name":"मेहंदी बोर्ड ","price":"₹--","desc":"मेहंदी बोर्ड","tags":["इतर"],"img":"img/मेहंदी बोर्ड.jpeg"}, 
             {"id":391,"cat":"decoration","name":"हळदी बोर्ड","price":"₹--","desc":"हळदी बोर्ड","tags":["इतर"],"img":"img/हळदी बोर्ड.jpeg"}, 
-            
-            
             {"id":40,"cat":"other","name":"सोफा","price":"₹--","desc":"सोफा","tags":["इतर"],"img":"img/sofa.jpeg"},
             {"id":410,"cat":"other","name":"VIP सोफा","price":"₹--","desc":"सोफा","tags":["इतर"],"img":"img/vipsofa.jpeg"},
             {"id":41,"cat":"utensils","name":"मिक्सर","price":"₹--","desc":"मिक्सर","tags":["स्वयंपाकघर"],"img":"img/mixer.jpeg"},
@@ -888,14 +1172,49 @@
             renderMenuItems(menuData);
             
             // Add search functionality
-            document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('keyup', function(e) {
                 if (e.key === 'Enter') {
                     searchItems();
                 }
             });
             
+            // Add input event for real-time search on mobile
+            if ('ontouchstart' in window) {
+                let searchTimeout;
+                searchInput.addEventListener('input', function() {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(searchItems, 500);
+                });
+            }
+            
             // Load saved form data
             loadFormData();
+            
+            // Add touch support for modal close
+            setupMobileTouchEvents();
+        }
+
+        // Setup mobile touch events
+        function setupMobileTouchEvents() {
+            // Close modal on outside touch
+            document.addEventListener('touchstart', function(e) {
+                const modal = document.getElementById('inquiryModal');
+                if (modal.classList.contains('active') && e.target === modal) {
+                    closeInquiryForm();
+                }
+            }, { passive: true });
+            
+            // Handle mobile keyboard better
+            document.querySelectorAll('input, textarea').forEach(element => {
+                element.addEventListener('focus', function() {
+                    if (window.innerWidth <= 768) {
+                        setTimeout(() => {
+                            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 300);
+                    }
+                });
+            });
         }
 
         // Render menu items
@@ -903,13 +1222,14 @@
             const menuGrid = document.getElementById('menuGrid');
             
             if (items.length === 0) {
-                menuGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #795548;">काहीही उपकरण सापडले नाही</div>';
+                menuGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #795548; font-size: 18px;">काहीही उपकरण सापडले नाही</div>';
                 return;
             }
             
             menuGrid.innerHTML = items.map(item => `
                 <div class="menu-item">
-                    <img src="${item.img}" alt="${item.name}" class="item-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNNzUgMTAwSDEyNU0xMDAgNzVWMTI1TTUwIDExMEgyNTBNMjEwIDU1VjE2NU01MCA1NVYxNjVNMTMwIDg1SDIwME0xMzAgMTA1SDIwME0xMzAgMTI1SDIwME01MCA4NUg4ME01MCAxMDVIODBNNTAgMTI1SDgwTTIyNSA4NUgyNjBNMjI1IDEwNUgyNjBNMjI1IDEyNUgyNjBNNTAgMTY1SDgwTTIyNSAxNjVIMjYwIiBzdHJva2U9IiNFOEU4RTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+'">
+                    <img src="${item.img}" alt="${item.name}" class="item-image" 
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNNzUgMTAwSDEyNU0xMDAgNzVWMTI1TTUwIDExMEgyNTBNMjEwIDU1VjE2NU01MCA1NVYxNjVNMTMwIDg1SDIwME0xMzAgMTA1SDIwME0xMzAgMTI1SDIwME01MCA4NUg4ME01MCAxMDVIODBNNTAgMTI1SDgwTTIyNSA4NUgyNjBNMjI1IDEwNUgyNjBNMjI1IDEyNUgyNjBNNTAgMTY1SDgwTTIyNSAxNjVIMjYwIiBzdHJva2U9IiNFOEU4RTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+'">
                     <div class="item-info">
                         <h3 class="item-name">${item.name}</h3>
                         <p class="item-desc">${item.desc}</p>
@@ -918,7 +1238,7 @@
                         </div>
                         <div class="item-footer">
                             <div class="item-price">${item.price}</div>
-                            <button class="inquiry-btn" onclick="openInquiryForm()">
+                            <button class="inquiry-btn" onclick="openInquiryForm()" aria-label="${item.name} साठी inquiry करा">
                                 <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white">
                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.864 3.488"/>
                                 </svg>
@@ -928,11 +1248,18 @@
                     </div>
                 </div>
             `).join('');
+            
+            // Add fade-in animation for new items
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.05}s`;
+                item.classList.add('fade-in');
+            });
         }
 
         // Search items
         function searchItems() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
             if (!searchTerm) {
                 filterCategory(currentFilter);
@@ -946,11 +1273,21 @@
             );
             
             renderMenuItems(filteredItems);
+            
+            // Update category buttons state
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.category-btn[onclick*="all"]').classList.add('active');
+            currentFilter = 'all';
         }
 
         // Filter by category
         function filterCategory(category) {
             currentFilter = category;
+            
+            // Clear search input
+            document.getElementById('searchInput').value = '';
             
             // Update active button
             document.querySelectorAll('.category-btn').forEach(btn => {
@@ -969,11 +1306,18 @@
         // Open inquiry form
         function openInquiryForm() {
             document.getElementById('inquiryModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus on first input
+            setTimeout(() => {
+                document.getElementById('inquiryName').focus();
+            }, 300);
         }
 
         // Close inquiry form
         function closeInquiryForm() {
             document.getElementById('inquiryModal').classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         // Save form data
@@ -1033,8 +1377,8 @@
             
             whatsappMessage += `*व्यवसाय माहिती:*\n`;
             whatsappMessage += `🏢 *आण्णा वस्तू भांडार मंगल केंद्र & केटरिंग*\n`;
-            whatsappMessage += `📍 पत्ता:  \n`;
-            whatsappMessage += `📞 फोन: 9850026102   \n\n`;
+            whatsappMessage += `📍 पत्ता: चोपडी, ता-सांगोला, जि-सोलापूर\n`;
+            whatsappMessage += `📞 फोन: 9850026102 / 9423727455\n\n`;
             
             whatsappMessage += `*सेवा:*\n`;
             whatsappMessage += `• भांडी / भांडे भाड्याने\n`;
@@ -1045,8 +1389,8 @@
             
             whatsappMessage += `*संपर्क करा:*\n`;
             whatsappMessage += `📞 9850026102\n`;
-            whatsappMessage += `📞    \n`;
-            whatsappMessage += `📍  `;
+            whatsappMessage += `📞 9423727455\n`;
+            whatsappMessage += `📍 चोपडी, ता-सांगोला, जि-सोलापूर`;
             
             // Encode message for WhatsApp
             const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -1059,17 +1403,62 @@
             closeInquiryForm();
             setTimeout(() => {
                 alert('Inquiry WhatsApp वर पाठवली गेली आहे! आम्ही लवकरच तुमच्या संपर्कात येऊ.');
+                
+                // Clear form after successful submission
+                if (confirm('Inquiry form रीसेट करायचे का?')) {
+                    document.getElementById('inquiryName').value = '';
+                    document.getElementById('inquiryMobile').value = '';
+                    document.getElementById('inquiryAddress').value = '';
+                    document.getElementById('inquiryMessage').value = '';
+                    localStorage.removeItem('inquiryFormData');
+                }
             }, 500);
         }
 
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', init);
         
-        // Close modal when clicking outside
+        // Close modal when clicking outside (for desktop)
         document.getElementById('inquiryModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeInquiryForm();
             }
+        });
+        
+        // Handle escape key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeInquiryForm();
+            }
+        });
+        
+        // Prevent form submission on enter in input fields
+        document.querySelectorAll('#inquiryName, #inquiryMobile, #inquiryAddress, #inquiryMessage').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (this.id === 'inquiryMessage') {
+                        sendWhatsAppInquiry();
+                    } else {
+                        const nextInput = this.nextElementSibling;
+                        if (nextInput && nextInput.tagName === 'INPUT') {
+                            nextInput.focus();
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Mobile menu improvement - handle back button
+        window.addEventListener('popstate', function() {
+            closeInquiryForm();
+        });
+        
+        // Add loading state for images
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.item-image').forEach(img => {
+                img.style.opacity = '1';
+            });
         });
     </script>
 </body>
