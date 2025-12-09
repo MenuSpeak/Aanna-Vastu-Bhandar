@@ -27,6 +27,7 @@
             line-height: 1.6;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
         }
 
         html {
@@ -40,6 +41,9 @@
             padding: 15px 20px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 99;
         }
 
         .business-name {
@@ -83,6 +87,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 15px;
+            min-height: 100vh;
         }
 
         /* Search and Filter */
@@ -286,6 +291,7 @@
             align-items: center;
             z-index: 1000;
             padding: 15px;
+            overflow-y: auto;
         }
 
         .inquiry-modal.active {
@@ -299,8 +305,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-height: 90vh;
-            overflow-y: auto;
+            margin: auto;
         }
 
         .inquiry-header {
@@ -1103,12 +1108,6 @@
             
             // Add touch support for modal close
             setupMobileTouchEvents();
-            
-            // Prevent zoom on mobile
-            setupMobileZoomPrevention();
-            
-            // Handle keyboard on mobile
-            setupMobileKeyboard();
         }
 
         // Setup mobile touch events
@@ -1129,30 +1128,6 @@
                 btn.addEventListener('touchend', function() {
                     this.style.opacity = '1';
                 });
-            });
-        }
-
-        // Prevent zoom on mobile
-        function setupMobileZoomPrevention() {
-            document.addEventListener('touchmove', function(e) {
-                if (e.scale !== 1) e.preventDefault();
-            }, { passive: false });
-        }
-
-        // Handle mobile keyboard
-        function setupMobileKeyboard() {
-            const inputs = document.querySelectorAll('input, textarea');
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    setTimeout(() => {
-                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 300);
-                });
-                
-                // Add done button for mobile keyboard
-                if (input.tagName === 'INPUT' && input.type !== 'button' && input.type !== 'submit') {
-                    input.setAttribute('enterkeyhint', 'done');
-                }
             });
         }
 
@@ -1194,16 +1169,6 @@
             menuItems.forEach((item, index) => {
                 item.style.animationDelay = `${index * 0.05}s`;
                 item.classList.add('fade-in');
-            });
-            
-            // Add touch event to whole card for better mobile experience
-            menuItems.forEach(item => {
-                item.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                item.addEventListener('touchend', function() {
-                    this.style.transform = 'scale(1)';
-                });
             });
         }
 
@@ -1272,23 +1237,12 @@
             setTimeout(() => {
                 document.getElementById('inquiryName').focus();
             }, 300);
-            
-            // Prevent body scrolling on mobile
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
         }
 
         // Close inquiry form
         function closeInquiryForm() {
             document.getElementById('inquiryModal').classList.remove('active');
-            document.body.style.overflow = '';
-            
-            // Restore body scrolling
-            document.body.style.position = '';
-            document.body.style.width = '';
-            
-            // Hide keyboard on mobile
-            document.activeElement.blur();
+            document.body.style.overflow = 'auto';
         }
 
         // Save form data
@@ -1435,14 +1389,9 @@
         // Handle orientation change on mobile
         window.addEventListener('orientationchange', function() {
             setTimeout(() => {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
+                window.scrollTo(0, 0);
             }, 100);
         });
-        
-        // Improve mobile performance
-        window.addEventListener('touchstart', function() {}, { passive: true });
-        window.addEventListener('touchmove', function() {}, { passive: true });
     </script>
 </body>
 </html>
